@@ -7,13 +7,14 @@ public class SchnellLadend extends Zustand{
 
     @Override
     void bearbeiten(Ladegeraet ladegeraet) {
-        System.out.println("Ladestand: " + ladegeraet.getLadestand());
+        int ladestand = ladegeraet.getLadestand();
+        System.out.println("Ladestand: " + ladestand);
 
-        if (ladegeraet.getLadestand() >= 80) {
+        if (ladestand >= 80) {
             ladegeraet.setZustand(NormalLadend.getNormalLadend());
-        } else if (ladegeraet.getLadestand() == 100) {
+        } else if (ladestand == 100) {
             ladegeraet.setZustand(NichtLadend.getNichtLadend());
-        } else if (ladegeraet.getLadestand() < 80) {
+        } else if (ladestand < 80) {
             ladegeraet.setZustand(SchnellLadend.getSchnellLadend());
         }
 

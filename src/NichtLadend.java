@@ -7,11 +7,12 @@ public class NichtLadend extends Zustand{
 
     @Override
     void bearbeiten(Ladegeraet ladegeraet) {
-        System.out.println("Ladestand: " + ladegeraet.getLadestand());
+        int ladestand = ladegeraet.getLadestand();
+        System.out.println("Ladestand: " + ladestand);
 
-        if (ladegeraet.getLadestand() >= 20 && ladegeraet.getLadestand() < 100) {
+        if (ladestand >= 20 && ladestand < 100) {
             ladegeraet.setZustand(NormalLadend.getNormalLadend());
-        } else if (ladegeraet.getLadestand() <20){
+        } else if (ladestand <20){
             ladegeraet.setZustand(NichtLadend.getNichtLadend());
         }
 
