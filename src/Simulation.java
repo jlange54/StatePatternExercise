@@ -1,18 +1,17 @@
 public class Simulation {
 
     public static void main(String[] args) {
+
+        ausloesen(21);  // Normal Ladend
+        ausloesen(22);  // Schnell Ladend
+        ausloesen(80);  // Normal Ladend
+        ausloesen(100); // Nicht Ladend
+    }
+
+    private static void ausloesen (int ladestand) {
         Ladegeraet ladegeraet = new Ladegeraet();
-
-        ladegeraet.setLadestand(21);
-        ladegeraet.ausloesen(); // Normal Ladend
-
-        ladegeraet.setLadestand(22);
-        ladegeraet.ausloesen(); // Schnell Ladend
-
-        ladegeraet.setLadestand(80);
-        ladegeraet.ausloesen(); // Normal Ladend
-
-        ladegeraet.setLadestand(100);
-        ladegeraet.ausloesen(); // Nicht Ladend
+        ladegeraet.setLadestand(ladestand);
+        ladegeraet.ausloesen();
+        System.out.println("--------------------------------");
     }
 }
